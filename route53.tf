@@ -1,5 +1,5 @@
 resource "aws_route53_record" "www" {
-  zone_id = "Z6XWWD56QDJWX"
+  zone_id = "Z6XWWD56QDJWX" #hosted zone ID of the domain 
   name    = "www.csamatov.net"
   type    = "A"
   ttl     = "60"
