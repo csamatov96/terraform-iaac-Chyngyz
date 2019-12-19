@@ -3,7 +3,7 @@ output "bucket_name" {
 }
 
 output "sec_group" {
-    value = aws_security_group.allow_ssh_http.name
+    value = aws_security_group.sec_group.name #resource name
 }
 
 output "key_name" {
