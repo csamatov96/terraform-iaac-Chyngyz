@@ -4,7 +4,7 @@ resource "aws_instance" "web" { #
   instance_type   = "t2.micro"
   associate_public_ip_address = "true"
   key_name = aws_key_pair.key_resource.key_name
-  security_groups = ["sec_group"]
+  security_groups = ["allow_ssh_http"] #refer only by its name not resource name
   user_data = file("userdata_file")
 
   lifecycle{
