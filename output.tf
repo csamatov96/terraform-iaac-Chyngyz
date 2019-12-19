@@ -34,6 +34,6 @@ output "instance_dns" {
 }
 
 output "route53" {
-  value = aws_route53_record.name
+  value = aws_route53_record.fqdn
 }
 
