@@ -12,6 +12,6 @@ resource "aws_instance" "ec2" {
   }
 
   tags = {
-    Name = "ec2${count.index +1}"
+    Name = "ec2_instance${count.index +1}"
   }
 }
