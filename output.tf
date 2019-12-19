@@ -13,13 +13,27 @@ output "key_name" {
 output "wordpress" {
     value = aws_route53_record.www.name
 }
-output "wordpress_username" {
-    value = "some_username"
-}
-output "wordpress_password" {
-    value = "password"
-}
+
+#output "wordpress_username" {
+#    value = "some_username"
+#}
+#output "wordpress_password" {
+#    value = "password"
+#}
 
 output "IPs" {
     value = aws_instance.web.*.public_ip
 }
+
+output "instance_az" {
+    value = aws_instance.availability_zone
+}
+
+output "instance_dns" {
+  value = aws_instance.public_dns
+}
+
+output "route53" {
+  value = aws_route53_record.name
+}
+
