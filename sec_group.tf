@@ -1,7 +1,7 @@
-resource "aws_security_group" "sec_group" {
-  name        = "allow_ssh_hhtp"
+resource "aws_security_group" "allow_ssh" {
+  name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
-  vpc_id      = "vpc-3b472741" #default VPC 
+  vpc_id      = "vpc-1471ad6e"
 
 
   ingress {
@@ -10,7 +10,6 @@ resource "aws_security_group" "sec_group" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]  
   }
-
 
 
   egress {

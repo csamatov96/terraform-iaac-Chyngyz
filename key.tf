@@ -1,4 +1,4 @@
-resource "aws_key_pair" "key_resource" {
-  key_name   = "bastion"
+resource "aws_key_pair" "deployer" {
+  key_name   = "deployer"
   public_key = file("~/.ssh/id_rsa.pub")
 }
