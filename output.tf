@@ -3,7 +3,7 @@ output "bucket_name" {
 }
 
 output "sec_group" {
-    value = aws_security_group.sec_group.name #resource name
+    value = aws_security_group.sec_group.name #resource name -> actual name
 }
 
 output "key_name" {
@@ -22,4 +22,7 @@ output "wordpress_password" {
 
 output "IPs" {
     value = aws_instance.web.*.public_ip
+}
+output "sdsd" {
+    value = aws_instance.region 
 }
