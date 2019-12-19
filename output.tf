@@ -10,7 +10,7 @@ output "key_name" {
     value = aws_key_pair.key_resource.key_name
 }
 
-output "wordpress" {
+output "route53" {
     value = aws_route53_record.www.name
 }
 
