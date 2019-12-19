@@ -26,11 +26,11 @@ output "IPs" {
 }
 
 output "instance_az" {
-    value = aws_instance.availability_zone
+    value = aws_instance.web.*.availability_zone
 }
 
 output "instance_dns" {
-  value = aws_instance.public_dns
+  value = aws_instance.web.*.public_dns
 }
 
 
