@@ -1,17 +1,16 @@
-resource "aws_instance" "web" { #
-  count                       = var.count_instance
-  ami                         = var.ami
-  instance_type               = var.instance_type
+resource "aws_instance" "web" {
+  count           = var.count_instance
+  ami             = var.ami
+  instance_type   = var.instance_type
   associate_public_ip_address = var.associate_public_ip_address
-  key_name                    = aws_key_pair.key_resource.key_name
-  security_groups             = ["allow_ssh_http"] #refer only by its name not resource name
-  #user_data = file("userdata_file")
+  key_name = aws_key_pair.deployer.key_name
+  security_groups = ["allow_ssh1"]
 
   provisioner "remote-exec" {
     connection {
       host = self.public_ip
       type = "ssh"
-      user = var.user #ec2, centos and etc...
+      user = var.user
       private_key = file(var.ssh_key_location)
       }
       inline = [
@@ -20,14 +19,10 @@ resource "aws_instance" "web" { #
         "sudo systemctl start httpd",
         ]
   }
-
-  lifecycle{
+  lifecycle {
     prevent_destroy = false
   }
-
   tags = {
-    Name = "ec2_instance${count.index +1}"
+    Name = "HelloWorld${count.index +1}"
   }
-
-  
 }
