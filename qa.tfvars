@@ -1,4 +1,4 @@
-ami           = "ami-00068cd7555f543d5" #us-east-1 
+ami           = "ami-0c5204531f799e0c6" #us-west-2 OREGON 
 instance_type = "t2.micro" 
 count_instance         = 4
 associate_public_ip_address = "true"

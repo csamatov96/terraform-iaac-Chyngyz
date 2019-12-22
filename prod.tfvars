@@ -1,4 +1,4 @@
-ami           = "ami-00068cd7555f543d5" #us-east-1 
+ami           = "ami-0b2d8d1abb76a53d8" #us-west-1 CALIFORNIA 
 instance_type = "t2.micro" 
 count_instance         = 4
 associate_public_ip_address = "true"
