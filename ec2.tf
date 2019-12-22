@@ -15,7 +15,8 @@ resource "aws_instance" "web" { #
     Name = "ec2_instance${count.index +1}"
   }
 
-  resource "aws_instance" "ec2_instance" {
+  resource "aws_instance" "ec2" {
+    name = "ec2"
     ami             = "ami-00068cd7555f543d5"
     instance_type   = "t2.micro"
     associate_public_ip_address = "true"
