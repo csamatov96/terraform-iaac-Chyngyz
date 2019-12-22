@@ -11,13 +11,13 @@ resource "aws_instance" "web" { #
     prevent_destroy = false
   }
 
-  resource "aws_instance" "ec2_instance" {
-  ami             = "ami-00068cd7555f543d5"
-  instance_type   = "t2.micro"
-  associate_public_ip_address = "true"
-  }
-
   tags = {
     Name = "ec2_instance${count.index +1}"
+  }
+
+  resource "aws_instance" "ec2_instance" {
+    ami             = "ami-00068cd7555f543d5"
+    instance_type   = "t2.micro"
+    associate_public_ip_address = "true"
   }
 }
