@@ -3,8 +3,8 @@ resource "aws_instance" "web" {
   ami             = var.ami
   instance_type   = var.instance_type
   associate_public_ip_address = var.associate_public_ip_address
-  key_name = aws_key_pair.deployer.key_name
-  security_groups = ["allow_ssh1"]
+  key_name = aws_key_pair.key_resource.key_name
+  security_groups = ["allow_ssh_http"]
 
   provisioner "remote-exec" {
     connection {
