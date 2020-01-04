@@ -1,68 +1,36 @@
 #!/bin/bash 
-
 echo $0 
-
 if [ "$0" = "$BASH_SOURCE" ] 
-
 then 
-
    echo "$0: Please source this file." 
-
    echo "e.g. source ./setenv configurations/data-rnd-us-vet1-v1" 
-
    return 1 
-
 fi 
 
  
 
 if [ -z "$1" ] 
-
 then 
-
    echo "setenv: You must provide the name of the configuration file." 
-
    echo "e.g. source ./setenv configurations/data-rnd-us-vet1-v1" 
-
    return 1 
-
 fi 
 
- 
 
  
-
- 
-
- 
-
 # Get directory we are running from 
-
 DIR=$(pwd) 
-
 DATAFILE="$DIR/$1" 
-
 if [ ! -d "$DIR/configurations" ]; then 
-
     echo "setenv: Must be run from the root directory of the terraform project." 
-
     return 1 
-
 fi 
-
 if [ ! -f "$DATAFILE" ]; then 
-
     echo "setenv: Configuration file not found: $DATAFILE" 
-
     return 1 
-
 fi 
 
- 
 
- 
-
- 
 
 # Get env from DATAFILE 
 ENVIRONMENT=$(sed -nr 's/^\s*environment\s*=\s*"([^"]*)".*$/\1/p' "$DATAFILE") 
