@@ -7,4 +7,4 @@ s3_tfstate_file = "infrastructure.tfstate" #Will be used to set backend.tf
 
 ami = "ami-02eac2c0129f6376b" #CentOS
 instance_type = "t2.micro"
-key_name = "~/.ssh/id_rsa.pub"
+key_name = "myMac"
