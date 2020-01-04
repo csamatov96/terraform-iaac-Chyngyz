@@ -17,7 +17,7 @@ then
 fi 
 
 
- 
+
 # Get directory we are running from 
 DIR=$(pwd) 
 DATAFILE="$DIR/$1" 
@@ -70,14 +70,14 @@ then
    echo "setenv: 's3_tfstate_file' variable not set in configuration file." 
    echo "e.g. s3_tfstate_file=\"infrastructure.tfstate\"" 
 return 1 
-fi 
-cat << EOF > "$DIR/backend.tf" 
+fi
+cat << EOF > "$DIR/backend.tf"
 terraform { 
 backend "s3" { 
 bucket = "${S3BUCKET}" 
 key = "${S3BUCKETPROJ}/${S3BUCKETREGION}/${S3BUCKETTYPE}/${ENVIRONMENT}/${S3TFSTATEFILE}" 
 region = "${S3BUCKETREGION}" 
   } 
-} 
-EOF 
+}
+EOF
 cat backend.tf
