@@ -141,9 +141,7 @@ then
 return 1 
 
 fi 
-
 cat << EOF > "$DIR/backend.tf" 
-
 terraform { 
 
 backend "s3" { 
