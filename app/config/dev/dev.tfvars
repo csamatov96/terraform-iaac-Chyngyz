@@ -1,6 +1,10 @@
 name = "wordpress_1"
 cidr = "10.0.0.0/16" 
 
+azs1 = "us-east-1a"
+azs2 = "us-east-1b"
+azs3 = "us-east-1c"
+
 environment = "dev" 
 s3_bucket = "wordpress-chyngyz-2019-dev" #Will be used to set backend.tf 
 s3_folder_project = "application" #Will be used to set backend.tf 
