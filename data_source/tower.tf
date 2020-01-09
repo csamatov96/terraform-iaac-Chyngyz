@@ -40,7 +40,7 @@ resource "aws_instance" "tower" {
         connection { 
             host = self.public_ip 
             type = "ssh" 
-            user = "centos" 
+            user = "centos"
             private_key = file("~/.ssh/id_rsa")
             } 
             inline = [ 
