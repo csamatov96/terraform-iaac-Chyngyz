@@ -39,7 +39,7 @@ resource "aws_instance" "tower" {
     provisioner "remote-exec" { 
         connection { 
             host = self.public_ip 
-            type = "ssh" 
+            type = "ssh" 
             user = "centos" 
             private_key = file("~/.ssh/id_rsa")
         } 
