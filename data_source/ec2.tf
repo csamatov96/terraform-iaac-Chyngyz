@@ -6,7 +6,7 @@ provider "aws" {
 #search for a Ubuntu latest with the owner
 data "aws_ami" "ubuntu" { #i can call it latest or whatever 
     filter { 
-        name   = "root-device-type" 
+        name = "root-device-type" 
         values = ["ebs"] #instance_store  
         } 
     most_recent = true 
