@@ -32,15 +32,15 @@ resource "aws_key_pair" "towerkey" {
 
 #provisioning an instance by using that AMI ID
 resource "aws_instance" "web" {
-    ami           = data.aws_ami.centos.id
+    ami = data.aws_ami.centos.id
     instance_type = "t2.micro"
     key_name = aws_key_pair.towerkey.key_name 
 
     provisioner "remote-exec" { 
         connection { 
-            host        = self.public_ip 
-            type        = "ssh" 
-            user        = "centos" 
+            host = self.public_ip 
+            type = "ssh" 
+            user = "centos" 
             private_key = file("~/.ssh/id_rsa")
         } 
     inline = [ 
@@ -55,8 +55,8 @@ resource "aws_instance" "web" {
 #mapping IP to a domain 
 resource "aws_route53_record" "tower" { 
     zone_id = "Z6XWWD56QDJWX" 
-    name    = "tower.csamatov.net" 
-    type    = "A" 
-    ttl     = "300" 
+    name = "tower.csamatov.net" 
+    type = "A" 
+    ttl = "300" 
     records = [aws_instance.web.public_ip] #to get the IP address of the instance provisioning 
 } 
