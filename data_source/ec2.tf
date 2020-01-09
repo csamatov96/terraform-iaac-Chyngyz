@@ -1,7 +1,8 @@
+/*
 #go to region us-east-2
 provider "aws" { 
     region = "us-east-2" 
-} 
+}
 
 #search for a Ubuntu latest with the owner
 data "aws_ami" "ubuntu" { #i can call it latest or whatever 
@@ -27,3 +28,4 @@ resource "aws_instance" "web" {
         Name = "HelloWorld"
     } 
 }
+*/
