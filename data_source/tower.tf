@@ -20,7 +20,7 @@ data "aws_ami" "centos" { #i can call it latest or whatever
 } 
 
 #show the AMI id 
-output "ami" { 
+output "centos" { 
     value = data.aws_ami.centos.id 
 } 
 
