@@ -31,8 +31,8 @@ resource "aws_key_pair" "towerkey" {
 } 
 
 #provisioning an instance by using that AMI ID
-resource "aws_instance" "web" {
-    ami = data.aws_ami.centos.id
+resource "aws_instance" "tower" {
+    ami           = data.aws_ami.centos.id
     instance_type = "t2.micro"
     key_name = aws_key_pair.towerkey.key_name 
 
@@ -43,9 +43,9 @@ resource "aws_instance" "web" {
             user = "centos" 
             private_key = file("~/.ssh/id_rsa")
         } 
-    inline = [ 
-        "sudo yum install -y epel-release", 
-    ] 
+        inline = [ 
+            "sudo yum install -y epel-release", 
+        ] 
     } 
     tags = {
         Name = "Instance"
@@ -58,5 +58,5 @@ resource "aws_route53_record" "tower" {
     name = "tower.csamatov.net" 
     type = "A" 
     ttl = "300" 
-    records = [aws_instance.web.public_ip] #to get the IP address of the instance provisioning 
+    records = [aws_instance.tower.public_ip] #to get the IP address of the instance provisioning 
 } 
