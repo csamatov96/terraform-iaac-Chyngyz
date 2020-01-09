@@ -16,9 +16,10 @@ output "ami" {
 
 #provisioning an instance by using that AMI 
 resource "aws_instance" "web" {
-  ami           = "${data.aws_ami.ubuntu.id}"
-  instance_type = "t2.micro"
+    ami           = "${data.aws_ami.ubuntu.id}"
+    instance_type = "t2.micro"
 
-  tags = {
-    Name = "HelloWorld"
-  }
+    tags = {
+        Name = "HelloWorld"
+    } 
+}
