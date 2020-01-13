@@ -6,8 +6,8 @@ module "wordpress1" {
 
   #hardcoded 
   azs             = [var.azs1, var.azs2, var.azs3] 
-  private_subnets = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
-  public_subnets  = ["10.0.101.0/24", "10.0.102.0/24", "10.0.103.0/24"]
+  private_subnets = [var.private_subnet1, var.private_subnet2, var.private_subnet3]
+  public_subnets  = [var.public_subnet1, var.public_subnet2, var.public_subnet3]
 
   enable_nat_gateway = true
   enable_vpn_gateway = true
