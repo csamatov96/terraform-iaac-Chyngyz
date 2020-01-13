@@ -8,7 +8,7 @@ resource "aws_iam_group" "developers" {
     path = "/" 
 } 
 
-/*resource "aws_iam_group_membership" "team" {  #for terraform, specifying users to groups, terraform way of doing 
+resource "aws_iam_group_membership" "team" {  #for terraform, specifying users to groups, terraform way of doing 
   name = "developers-group-membership" 
   users = [ 
     aws_iam_user.tim.name 
@@ -16,11 +16,12 @@ resource "aws_iam_group" "developers" {
   group = aws_iam_group.developers.name # [, can be part of multiple groups] 
 } 
 
+#
 resource "aws_iam_policy" "policy" { 
   name = "test_policy3" 
   path = "/" 
   description = "My test policy" 
-  policy = <<EOF 
+  policy = <<EOF
 { 
 "Version": "2012-10-17", 
 "Statement": [ 
@@ -32,16 +33,16 @@ resource "aws_iam_policy" "policy" {
 } 
 ] 
 } 
-EOF 
+EOF
 } 
-*/
 
-/*
+
+#
 resource "aws_iam_role" "test_role" { 
 
 name = "test_role" 
 
-assume_role_policy = <<EOF 
+assume_role_policy = <<EOF
 
 { 
 
@@ -67,11 +68,9 @@ assume_role_policy = <<EOF
 
   ] 
 
+}
+EOF
 } 
 
-EOF 
-
-} 
-*/
 
 
