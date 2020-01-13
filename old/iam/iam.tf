@@ -16,7 +16,7 @@ resource "aws_iam_group_membership" "team" {  #for terraform, specifying users t
   group = aws_iam_group.developers.name # [, can be part of multiple groups] 
 } 
 
-#
+#ec2 full access policy 
 resource "aws_iam_policy" "policy" { 
   name = "test_policy3" 
   path = "/" 
@@ -37,7 +37,7 @@ EOF
 } 
 
 
-#
+#ec2 role 
 resource "aws_iam_role" "test_role" { 
 name = "test_role" 
 assume_role_policy = <<EOF
