@@ -81,5 +81,5 @@ region = "${S3BUCKETREGION}"
 }
 EOF
 cat backend.tf
-#rm -rf .terraform/terraform.tfstate #to remove the state every time, Terraform creates the state
-#terraform init
+rm -rf .terraform/terraform.tfstate #to remove the state every time, Terraform creates the state
+terraform init
